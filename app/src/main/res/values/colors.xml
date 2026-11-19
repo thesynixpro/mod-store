@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Launch/splash background: the brand dark charcoal from ApraxPalette.Charcoal. -->
+    <color name="aprax_splash_background">#0B0D12</color>
+</resources>

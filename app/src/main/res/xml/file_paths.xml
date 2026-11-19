@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Directories the FileProvider may serve. Installs need one path: the private downloads
+  directory. Nothing else in the app's storage is shareable.
+-->
+<paths>
+    <files-path
+        name="downloads"
+        path="downloads/" />
+</paths>

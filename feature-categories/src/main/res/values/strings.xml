@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="categories_games">Games</string>
+    <string name="categories_apps">Apps</string>
+    <string name="categories_empty">No categories available</string>
+    <string name="retry">Try again</string>
+</resources>
