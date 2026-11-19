@@ -3,6 +3,7 @@ package com.aprax.modstore.feature.categories
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.aprax.modstore.core.ui.UiState
+import com.aprax.modstore.core.ui.dataOrNull
 import com.aprax.modstore.domain.model.Category
 import com.aprax.modstore.domain.model.CategoryTaxonomy
 import com.aprax.modstore.domain.usecase.GetCategoriesUseCase

@@ -46,6 +46,8 @@ import com.aprax.modstore.core.ui.MetaPill
 import com.aprax.modstore.core.ui.SectionHeader
 import com.aprax.modstore.core.ui.SourceWarningBanner
 import com.aprax.modstore.core.ui.UiState
+import com.aprax.modstore.core.ui.dataOrNull
+import com.aprax.modstore.core.ui.errorOrNull
 import com.aprax.modstore.domain.model.AppListing
 import com.aprax.modstore.feature.search.R
 

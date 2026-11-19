@@ -186,9 +186,10 @@ private fun ActiveDownloadRow(
                 }
 
                 DownloadStatus.RUNNING -> {
-                    if (download.progress != null) {
+                    val progress = download.progress
+                    if (progress != null) {
                         LinearProgressIndicator(
-                            progress = { download.progress },
+                            progress = { progress },
                             modifier = Modifier.fillMaxWidth(),
                         )
                         Spacer(Modifier.height(3.dp))

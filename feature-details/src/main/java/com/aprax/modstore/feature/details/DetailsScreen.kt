@@ -38,7 +38,6 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -74,6 +73,7 @@ fun DetailsScreen(
 ) {
     val state by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
+    val clipboard = context.getSystemService(ClipboardManager::class.java)
 
     LaunchedEffect(listing.id) {
         viewModel.load(listing)
@@ -104,8 +104,7 @@ fun DetailsScreen(
                         ExternalLinks.openPlayStore(context, pkg)
                     },
                     onCopyChecksum = { checksum ->
-                        val manager = remember { LocalContext.current.getSystemService(ClipboardManager::class.java) }
-                        manager.setPrimaryClip(ClipData.newPlainText("checksum", checksum))
+                        clipboard?.setPrimaryClip(ClipData.newPlainText("checksum", checksum))
                     },
                 )
             }
@@ -216,9 +215,10 @@ private fun DetailsContent(
 
         // Installed / update badge
         val installedVersionCode = state.installedVersionCode
+        val appVersionCode = app.versionCode
         val updateAvailable = installedVersionCode != null &&
-            app.versionCode != null &&
-            installedVersionCode < app.versionCode
+            appVersionCode != null &&
+            installedVersionCode < appVersionCode
         val installed = installedVersionCode != null
 
         if (installed) {
@@ -395,11 +395,12 @@ private fun DetailsContent(
         }
 
         // Description
-        if (!app.description.isNullOrBlank()) {
+        val description = app.description
+        if (!description.isNullOrBlank()) {
             Spacer(Modifier.height(Spacing.regular))
             SectionHeader(title = stringResource(R.string.details_about))
             Text(
-                text = app.description,
+                text = description,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(horizontal = Spacing.screenHorizontal),
@@ -407,11 +408,12 @@ private fun DetailsContent(
         }
 
         // Mod info
-        if (!app.modInfo.isNullOrBlank()) {
+        val modInfo = app.modInfo
+        if (!modInfo.isNullOrBlank()) {
             Spacer(Modifier.height(Spacing.regular))
             SectionHeader(title = stringResource(R.string.details_mod_info))
             Text(
-                text = app.modInfo,
+                text = modInfo,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 modifier = Modifier.padding(horizontal = Spacing.screenHorizontal),
@@ -480,16 +482,17 @@ private fun DownloadStatusBlock(
                 style = MaterialTheme.typography.titleSmall,
                 color = MaterialTheme.colorScheme.onSurface,
             )
-            if (download.status == DownloadStatus.RUNNING && download.progress != null) {
+            val progress = download.progress
+            if (download.status == DownloadStatus.RUNNING && progress != null) {
                 Spacer(Modifier.height(Spacing.small))
                 LinearProgressIndicator(
-                    progress = { download.progress },
+                    progress = { progress },
                     modifier = Modifier.fillMaxWidth(),
                 )
                 Spacer(Modifier.height(3.dp))
                 Text(
                     text = ByteFormat.format(download.bytesDownloaded)
-                        ?: stringResource(R.string.download_percent, (download.progress * 100).toInt()),
+                        ?: stringResource(R.string.download_percent, (progress * 100).toInt()),
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
