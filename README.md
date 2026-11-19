@@ -32,10 +32,12 @@ It reads listings from public source sites (Modyolo, HappyMod, A1N), attributes 
 Requirements: JDK 17, Android SDK with `compileSdk 37`.
 
 ```bash
-./gradlew :app:assembleDebug
+gradle :app:assembleDebug
 ```
 
-The GitHub Actions workflow (`assembleDebug`) publishes the resulting APK to the repo's **latest** release on every push to `main`.
+The GitHub Actions workflow (`.github/workflows/android.yml`) builds the debug APK on every push to `main` and publishes it to the repo's **latest** release.
+
+> Note: the repository is maintained with an on-device toolchain that cannot produce the binary `gradle-wrapper.jar`, so the wrapper is not committed and CI installs Gradle 9.6.1 directly via `gradle/actions/setup-gradle`. To work on this project on a desktop machine, run `gradle wrapper` once to regenerate the wrapper locally.
 
 ## Deep links
 
