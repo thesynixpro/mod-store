@@ -235,6 +235,7 @@ fun SettingsScreen(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ThemeSetting(
     current: ThemeMode,

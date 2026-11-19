@@ -78,7 +78,7 @@ fun HomeScreen(
             is UiState.Ready -> {
                 val feed = uiState.data
                 val report = SourceLoadReport(
-                    succeeded = feed.succeededSources.toSet(),
+                    succeeded = feed.succeededSources,
                     failed = feed.failedSources,
                 )
                 if (feed.isEmpty) {
