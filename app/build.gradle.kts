@@ -145,6 +145,12 @@ dependencies {
 
     implementation(libs.androidx.work.runtime.ktx)
 
+    // The app configures Coil's singleton image loader directly and shares an OkHttp
+    // client with its network fetcher, so both APIs must be on this module's compile
+    // classpath rather than only reachable transitively through :core or :data.
+    implementation(libs.okhttp)
+    implementation(libs.coil.network.okhttp)
+
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 

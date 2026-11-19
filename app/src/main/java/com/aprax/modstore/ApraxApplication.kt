@@ -62,7 +62,7 @@ class ApraxApplication : Application(), Configuration.Provider, SingletonImageLo
             .memoryCache {
                 MemoryCache.Builder()
                     // A percentage of the app's allowed memory, not of the whole device.
-                    .maxSizePercent(0.20)
+                    .maxSizePercent(context, 0.20)
                     .build()
             }
             .diskCache {

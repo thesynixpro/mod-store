@@ -38,7 +38,7 @@ class AppViewModel @Inject constructor(
     val listings: StateFlow<Map<String, AppListing>> = _listings.asStateFlow()
 
     /** A source-page link waiting for the nav host to open it. */
-    private val _deepLink = MutableStateFlow<AppListing?>()
+    private val _deepLink = MutableStateFlow<AppListing?>(null)
     val deepLink: StateFlow<AppListing?> = _deepLink.asStateFlow()
 
     init {
