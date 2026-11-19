@@ -1,0 +1,72 @@
+name: Build debug APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: assembleDebug
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      # Install Gradle directly instead of using the wrapper: the repository is maintained
+      # on an on-device toolchain that cannot carry the binary gradle-wrapper.jar, so the
+      # pinned distribution below is the build's source of truth.
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.6.1'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          cmdline-tools-version: latest
+
+      - name: Accept Android SDK licenses
+        run: |
+          yes | sdkmanager --licenses > /dev/null || true
+
+      - name: Build debug APK
+        run: gradle :app:assembleDebug --no-daemon --stacktrace
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Create or update the latest release
+        uses: softprops/action-gh-release@v2
+        if: github.ref == 'refs/heads/main' && success()
+        with:
+          tag_name: latest
+          name: Latest debug build
+          body: |
+            Debug APK built from the latest `main` commit.
+
+            - File: `app-debug.apk`
+            - Package: `com.aprax.modstore`
+            - Debug-signed: yes (Android's standard debug key)
+            - SHA-256 of the artifact is available on the Actions run summary (or compute it after download).
+          files: app/build/outputs/apk/debug/app-debug.apk
+          make_latest: true
+          fail_on_unmatched_files: true

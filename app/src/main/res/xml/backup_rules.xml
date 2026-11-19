@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Legacy backup rules (API 24-30). APKs and the cache are excluded for the same reason as
+  the modern rules file.
+-->
+<full-backup-content>
+    <exclude domain="file" path="downloads/" />
+    <exclude domain="database" path="aprax-mods-store.db" />
+    <exclude domain="cache" path="." />
+</full-backup-content>

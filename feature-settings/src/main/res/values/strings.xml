@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Settings</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_summary">Follow system, light or dark.</string>
+    <string name="settings_dynamic_colour">Dynamic colour</string>
+    <string name="settings_dynamic_colour_summary">Use Material You colours on Android 12+.</string>
+    <string name="settings_downloads">Downloads</string>
+    <string name="settings_wifi_only">Wi-Fi only</string>
+    <string name="settings_wifi_only_summary">Only start downloads on unmetered connections.</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_notifications_summary">Show download progress notifications.</string>
+    <string name="settings_auto_delete">Delete after install</string>
+    <string name="settings_auto_delete_summary">Remove the APK file once installed.</string>
+    <string name="settings_sources">Sources</string>
+    <string name="settings_sources_summary">Each source is queried only when switched on.</string>
+    <string name="settings_about">About &amp; legal</string>
+    <string name="settings_privacy">Privacy policy</string>
+    <string name="settings_terms">Terms of use</string>
+    <string name="settings_takedown">Report a listing</string>
+    <string name="settings_source_notice">Aprax Mods Store is an independent index. It does not host, mirror or modify any APK. Listings and downloads belong to the source sites named on each card.</string>
+    <string name="settings_about_app">Aprax Mods Store</string>
+    <string name="settings_about_version">Version %1$s</string>
+    <string name="settings_source_available">Reachable and queryable.</string>
+    <string name="settings_source_no_catalogue">No catalogue available.</string>
+    <string name="settings_source_link_only">Listings open on the source site.</string>
+    <string name="settings_source_unavailable">Currently unreachable.</string>
+    <string name="settings_takedown_message">This app indexes third-party listings with attribution. To request removal of a listing, contact the source site that published it. To report this app, open an issue on the GitHub repository.</string>
+    <string name="ok">OK</string>
+    <string name="refresh">Refresh</string>
+</resources>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aprax Mods Store</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_categories">Categories</string>
+    <string name="nav_downloads">Downloads</string>
+    <string name="nav_library">Library</string>
+
+    <!-- Settings route title -->
+    <string name="settings_title">Settings</string>
+
+    <!-- Home screen -->
+    <string name="home_title">Discover mods</string>
+    <string name="home_subtitle">Aggregated from the source sites, attributed on every card.</string>
+    <string name="home_newest_section">Newly updated</string>
+    <string name="home_empty_title">Nothing to show yet</string>
+    <string name="home_empty_message">The sources haven\'t returned any listings. Pull to refresh.</string>
+    <string name="home_last_synced">Last synced %1$s</string>
+    <string name="home_see_all">See all</string>
+    <string name="home_offline_banner">You\'re offline. Showing the last cached listings.</string>
+
+    <!-- Search screen -->
+    <string name="search_hint">Search apps or games</string>
+    <string name="search_action">Search</string>
+    <string name="search_empty_title">Search the sources</string>
+    <string name="search_empty_message">Find listings across Modyolo and HappyMod. Only real source results are shown.</string>
+    <string name="search_no_results">No results</string>
+    <string name="search_no_results_message">Nothing matched that query on the enabled sources.</string>
+    <string name="search_history_header">Recent searches</string>
+    <string name="search_clear_history">Clear</string>
+
+    <!-- Categories screen -->
+    <string name="categories_title">Categories</string>
+    <string name="categories_games">Games</string>
+    <string name="categories_apps">Apps</string>
+    <string name="categories_empty">No categories available</string>
+    <string name="categories_games_short">Games</string>
+    <string name="categories_apps_short">Apps</string>
+
+    <!-- Downloads screen -->
+    <string name="downloads_title">Downloads</string>
+    <string name="downloads_empty">No downloads yet</string>
+    <string name="downloads_empty_message">APKs you download appear here. Downloads only ever come from the source sites.</string>
+    <string name="downloads_queue">In progress</string>
+    <string name="downloads_history">Installable and installed</string>
+    <string name="download_queued">Queued</string>
+    <string name="download_paused">Paused</string>
+    <string name="download_failed">Failed</string>
+    <string name="download_cancelled">Cancelled</string>
+    <string name="download_ready">Ready to install</string>
+    <string name="download_installed">Installed</string>
+    <string name="download_progress">%1$s of %2$s</string>
+    <string name="download_progress_speed">%1$s of %2$s at %3$s/s</string>
+    <string name="download_percent">%1$d%%</string>
+    <string name="download_pause">Pause</string>
+    <string name="download_resume">Resume</string>
+    <string name="download_cancel">Cancel</string>
+    <string name="download_retry">Retry</string>
+    <string name="download_install">Install</string>
+    <string name="download_open_source">Open source page</string>
+    <string name="download_open_listing">Open listing</string>
+    <string name="download_delete">Delete file</string>
+    <string name="download_remove">Remove</string>
+    <string name="download_storage_used">%1$s used by downloaded APKs</string>
+
+    <!-- Library screen -->
+    <string name="library_title">Library</string>
+    <string name="library_favourites">Favourites</string>
+    <string name="library_saved">Saved for later</string>
+    <string name="library_empty">Nothing here yet</string>
+    <string name="library_empty_message">Tap the heart or bookmark on any listing to keep it here.</string>
+    <string name="library_remove_action">Remove from this tab</string>
+
+    <!-- Settings screen -->
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_summary">Follow system, light or dark.</string>
+    <string name="settings_dynamic_colour">Dynamic colour</string>
+    <string name="settings_dynamic_colour_summary">Use Material You colours on Android 12+.</string>
+    <string name="settings_downloads">Downloads</string>
+    <string name="settings_wifi_only">Wi-Fi only</string>
+    <string name="settings_wifi_only_summary">Only start downloads on unmetered connections.</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_notifications_summary">Show download progress notifications.</string>
+    <string name="settings_auto_delete">Delete after install</string>
+    <string name="settings_auto_delete_summary">Remove the APK file once installed.</string>
+    <string name="settings_sources">Sources</string>
+    <string name="settings_sources_summary">Each source is queried only when switched on.</string>
+    <string name="settings_about">About &amp; legal</string>
+    <string name="settings_privacy">Privacy policy</string>
+    <string name="settings_terms">Terms of use</string>
+    <string name="settings_takedown">Report a listing</string>
+    <string name="settings_source_notice">Aprax Mods Store is an independent index. It does not host, mirror or modify any APK. Listings and downloads belong to the source sites named on each card.</string>
+    <string name="settings_about_app">Aprax Mods Store</string>
+    <string name="settings_about_version">Version %1$s</string>
+    <string name="settings_source_available">Reachable and queryable.</string>
+    <string name="settings_source_no_catalogue">No catalogue available.</string>
+    <string name="settings_source_link_only">Listings open on the source site.</string>
+    <string name="settings_source_unavailable">Currently unreachable.</string>
+    <string name="settings_takedown_message">This app indexes third-party listings with attribution. To request removal of a listing, contact the source site that published it. To report this app, open an issue on the GitHub repository.</string>
+    <string name="ok">OK</string>
+
+    <!-- Details screen -->
+    <string name="details_open_source">Open original source</string>
+    <string name="details_download">Download APK</string>
+    <string name="details_visit_source">Visit source to download</string>
+    <string name="details_installed_version">Installed version %1$s</string>
+    <string name="details_update_available">Update available</string>
+    <string name="details_downgrade_note">This listing is older than what you have installed.</string>
+    <string name="details_facts">Details</string>
+    <string name="details_about">About</string>
+    <string name="details_permissions">Requested permissions</string>
+    <string name="details_variants">Versions</string>
+    <string name="details_source">Source</string>
+    <string name="details_version">Version</string>
+    <string name="details_size">Size</string>
+    <string name="details_category">Category</string>
+    <string name="details_developer">Developer</string>
+    <string name="details_updated">Updated</string>
+    <string name="details_requirements">Android</string>
+    <string name="details_favourite">Add to favourites</string>
+    <string name="details_saved">Save for later</string>
+    <string name="details_play_store">Play Store</string>
+    <string name="details_mod_info">Mod info</string>
+    <string name="details_running">Downloading</string>
+    <string name="details_security_checksum">The source published a checksum, so the download can be integrity-checked.</string>
+    <string name="details_security_signature">The downloaded APK\'s signing certificate was read and is internally consistent. This is not a malware guarantee.</string>
+    <string name="details_security_unknown">No security assessment is possible for this listing. Install third-party APKs at your own risk.</string>
+    <string name="details_no_direct_download">This source doesn\'t expose a direct download link, so it opens on the original website. No APK is certified safe or malware-free.</string>
+    <string name="details_checksum">SHA-256 checksum</string>
+    <string name="details_copy_checksum">Copy</string>
+    <string name="details_copied">Copied to clipboard</string>
+
+    <!-- Generic -->
+    <string name="retry">Try again</string>
+    <string name="refresh">Refresh</string>
+    <string name="back">Back</string>
+
+    <!-- Category browse route -->
+    <string name="browse_empty_title">Nothing in this category yet</string>
+    <string name="browse_empty_message">The enabled sources haven\'t published anything here.</string>
+</resources>

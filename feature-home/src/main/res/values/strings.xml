@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_title">Discover mods</string>
+    <string name="home_subtitle">Aggregated from the source sites, attributed on every card.</string>
+    <string name="home_newest_section">Newly updated</string>
+    <string name="home_empty_title">Nothing to show yet</string>
+    <string name="home_empty_message">The sources haven\'t returned any listings. Pull to refresh.</string>
+    <string name="home_see_all">See all</string>
+    <string name="settings_title">Settings</string>
+    <string name="refresh">Refresh</string>
+</resources>

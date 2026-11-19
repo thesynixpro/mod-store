@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="back">Back</string>
+    <string name="details_open_source">Open original source</string>
+    <string name="details_download">Download APK</string>
+    <string name="details_visit_source">Visit source to download</string>
+    <string name="details_installed_version">Installed version %1$s</string>
+    <string name="details_update_available">Update available</string>
+    <string name="details_facts">Details</string>
+    <string name="details_about">About</string>
+    <string name="details_permissions">Requested permissions</string>
+    <string name="details_variants">Versions</string>
+    <string name="details_source">Source</string>
+    <string name="details_version">Version</string>
+    <string name="details_size">Size</string>
+    <string name="details_category">Category</string>
+    <string name="details_developer">Developer</string>
+    <string name="details_updated">Updated</string>
+    <string name="details_requirements">Android</string>
+    <string name="details_favourite">Add to favourites</string>
+    <string name="details_saved">Save for later</string>
+    <string name="details_play_store">Play Store</string>
+    <string name="details_mod_info">Mod info</string>
+    <string name="details_running">Downloading</string>
+    <string name="details_security_checksum">The source published a checksum, so the download can be integrity-checked.</string>
+    <string name="details_security_signature">The downloaded APK\'s signing certificate was read and is internally consistent. This is not a malware guarantee.</string>
+    <string name="details_security_unknown">No security assessment is possible for this listing. Install third-party APKs at your own risk.</string>
+    <string name="details_no_direct_download">This source doesn\'t expose a direct download link, so it opens on the original website. No APK is certified safe or malware-free.</string>
+    <string name="details_checksum">SHA-256 checksum</string>
+    <string name="details_copy_checksum">Copy</string>
+    <string name="details_copied">Copied to clipboard</string>
+    <string name="download_queued">Queued</string>
+    <string name="download_paused">Paused</string>
+    <string name="download_failed">Failed</string>
+    <string name="download_cancelled">Cancelled</string>
+    <string name="download_ready">Ready to install</string>
+    <string name="download_installed">Installed</string>
+    <string name="download_running">Downloading</string>
+    <string name="download_percent">%1$d%%</string>
+</resources>

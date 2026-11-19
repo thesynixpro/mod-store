@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Backup rules. Everything here is local cache and preferences; the download directory is
+  excluded because APKs are large and should never be restored onto a new device.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="file" path="downloads/" />
+        <exclude domain="database" path="aprax-mods-store.db" />
+        <exclude domain="cache" path="." />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="file" path="downloads/" />
+        <exclude domain="cache" path="." />
+    </device-transfer>
+</data-extraction-rules>
