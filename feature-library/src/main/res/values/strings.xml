@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="library_favourites">Favourites</string>
-    <string name="library_saved">Saved for later</string>
-    <string name="library_empty">Nothing here yet</string>
-    <string name="library_empty_message">Tap the heart or bookmark on any listing to keep it here.</string>
-    <string name="library_remove_action">Remove from this tab</string>
-</resources>

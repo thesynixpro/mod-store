@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- Same launch background in night mode: the brand charcoal works for both. -->
-    <color name="aprax_splash_background">#0B0D12</color>
-</resources>

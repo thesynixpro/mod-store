@@ -1,24 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  Launcher icon: a stylised "A" monogram on the brand's deep charcoal, with a violet→
-  indigo diagonal and a cyan download arrow cutting through the stem. Drawn entirely as
-  vector paths so the icon is pure text (no binary PNG/WebP) and can live in git.
--->
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="108dp"
-    android:height="108dp"
-    android:viewportWidth="108"
-    android:viewportHeight="108">
-    <!-- Canvas -->
-    <path
-        android:pathData="M0,0h108v108h-108z"
-        android:fillColor="#0B0D12" />
-    <!-- "A" monogram, violet-to-indigo gradient body -->
-    <path
-        android:pathData="M54,20 L82,88 L74,88 L68,72 L40,72 L34,88 L26,88 Z M54,34 L47,60 L61,60 Z"
-        android:fillColor="#8B7CFF" />
-    <!-- Cyan download arrow through the "A" crossbar -->
-    <path
-        android:pathData="M49,52h10v9h-10z M54,47l-6,7h12z"
-        android:fillColor="#35D0E8" />
-</vector>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/ic_launcher_art"
+    android:gravity="center"
+    android:filter="true" />
