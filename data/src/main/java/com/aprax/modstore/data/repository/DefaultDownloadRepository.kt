@@ -47,6 +47,11 @@ class DefaultDownloadRepository @Inject constructor(
 
     private val workManager: WorkManager get() = WorkManager.getInstance(context)
 
+    /** Row IDs are UUID strings; ignore legacy rows whose ID is not a valid WorkManager UUID. */
+    private fun cancelWork(id: String) {
+        runCatching { UUID.fromString(id) }.getOrNull()?.let(workManager::cancelWorkById)
+    }
+
     override fun observeDownloads(): Flow<List<DownloadState>> =
         combine(downloadDao.observeAll(), progressUpdater.progress) { rows, liveProgress ->
             rows.map { row -> row.toDomain(liveProgress[row.id]) }
@@ -103,7 +108,7 @@ class DefaultDownloadRepository @Inject constructor(
         val row = downloadDao.findByListing(listingId) ?: return@runCatching
         // WorkManager has no portable pause, so pausing cancels the work and keeps the row so
         // the user can resume it. The partial file is removed by the worker on cancellation.
-        workManager.cancelWorkById(row.id)
+        cancelWork(row.id)
         downloadDao.updateStatus(row.id, DownloadStatus.PAUSED.name, null, System.currentTimeMillis())
         progressUpdater.clear(row.id)
     }
@@ -116,7 +121,7 @@ class DefaultDownloadRepository @Inject constructor(
 
     override suspend fun cancel(listingId: String): Result<Unit> = runCatching {
         val row = downloadDao.findByListing(listingId) ?: return@runCatching
-        workManager.cancelWorkById(row.id)
+        cancelWork(row.id)
         row.localFilePath?.let { path -> runCatching { File(path).delete() } }
         downloadDao.updateStatus(row.id, DownloadStatus.CANCELLED.name, null, System.currentTimeMillis())
         progressUpdater.clear(row.id)
@@ -129,7 +134,7 @@ class DefaultDownloadRepository @Inject constructor(
     }
 
     override suspend fun removeFromHistory(id: String): Result<Unit> = runCatching {
-        workManager.cancelWorkById(id)
+        cancelWork(id)
         progressUpdater.clear(id)
         downloadDao.delete(id)
     }

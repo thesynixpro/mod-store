@@ -132,7 +132,7 @@ class AggregatedCatalogRepository @Inject constructor(
             )
         }
 
-        val (listings, succeeded, failures) = fanOut(SourceFilter(participating)) { source ->
+        val (listings, succeeded, failures) = fanOut(SourceFilter(participating.toSet())) { source ->
             val slug = category.sourceSlugs[source.id] ?: return@fanOut Result.success(Page.empty(page))
             source.byCategory(slug, page, pageSize)
         }

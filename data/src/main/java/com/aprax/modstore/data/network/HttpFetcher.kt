@@ -141,11 +141,9 @@ class HttpFetcher @Inject constructor(
         }
     }
 
-    private companion object {
-        const val PING_SPACING_MS = 120L
-    }
-
     companion object {
+        const val PING_SPACING_MS = 120L
+
         /**
          * Identifies the app honestly. A site owner seeing unexpected traffic can tell what
          * is calling and reach the project rather than silently blocking it.

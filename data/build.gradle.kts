@@ -32,6 +32,8 @@ ksp {
 
 dependencies {
     api(project(":domain"))
+    // Source parsers and the HTTP layer share core's URL-safety and ID helpers.
+    implementation(project(":core"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlinx.coroutines.android)

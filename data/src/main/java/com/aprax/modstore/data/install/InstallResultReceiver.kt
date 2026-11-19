@@ -32,9 +32,8 @@ class InstallResultReceiver : BroadcastReceiver() {
     lateinit var downloadDao: DownloadDao
 
     override fun onReceive(context: Context, intent: Intent) {
-        // Required by Hilt: this is where the injected fields are populated before the
-        // body below runs. Without it `downloadDao` would be an uninitialised lateinit.
-        super.onReceive(context, intent)
+        // Hilt populates the injected fields before onReceive is called; BroadcastReceiver
+        // declares this method abstract, so there is no super implementation to invoke.
 
         val status = intent.getIntExtra(PackageInstaller.EXTRA_STATUS, Int.MIN_VALUE)
         val packageName = intent.getStringExtra(PackageInstaller.EXTRA_PACKAGE_NAME)
