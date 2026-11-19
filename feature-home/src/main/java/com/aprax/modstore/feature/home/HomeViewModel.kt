@@ -5,11 +5,12 @@ import androidx.lifecycle.viewModelScope
 import com.aprax.modstore.core.ui.SourceLoadReport
 import com.aprax.modstore.core.ui.UiState
 import com.aprax.modstore.domain.model.AppError
-import com.aprax.modstore.domain.model.AppListing
 import com.aprax.modstore.domain.model.Category
 import com.aprax.modstore.domain.model.CategoryTaxonomy
+import com.aprax.modstore.domain.model.foldValue
 import com.aprax.modstore.domain.repository.SettingsRepository
 import com.aprax.modstore.domain.usecase.GetHomeFeedUseCase
+import com.aprax.modstore.domain.usecase.GetHomeFeedUseCase.HomeFeed
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -46,7 +47,7 @@ class HomeViewModel @Inject constructor(
             _uiState.value = HomeUiState(UiState.Loading)
             val settings = settingsRepository.settings.first()
             val result = getHomeFeed(settings.sourceFilter, sections)
-            result.fold(
+            result.foldValue(
                 onSuccess = { feed ->
                     _uiState.value = HomeUiState(
                         state = if (feed.isEmpty) {

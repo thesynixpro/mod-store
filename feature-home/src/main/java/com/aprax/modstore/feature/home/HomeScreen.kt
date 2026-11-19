@@ -43,6 +43,8 @@ import com.aprax.modstore.core.ui.StateAction
 import com.aprax.modstore.core.ui.UiState
 import com.aprax.modstore.domain.model.AppListing
 import com.aprax.modstore.domain.model.CategoryTaxonomy
+import com.aprax.modstore.domain.model.SourceInfo
+import com.aprax.modstore.domain.usecase.GetHomeFeedUseCase
 import com.aprax.modstore.feature.home.R
 
 @Composable
@@ -76,7 +78,7 @@ fun HomeScreen(
             is UiState.Ready -> {
                 val feed = uiState.data
                 val report = SourceLoadReport(
-                    succeeded = feed.succeededSources,
+                    succeeded = feed.succeededSources.toSet(),
                     failed = feed.failedSources,
                 )
                 if (feed.isEmpty) {
@@ -147,8 +149,8 @@ private fun HomeContent(
         modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(bottom = Spacing.large),
     ) {
-        report.warningMessage { sourceName ->
-            sourceName
+        report.warningMessage { sourceId ->
+            SourceInfo.All.firstOrNull { it.id == sourceId }?.displayName ?: sourceId.name
         }?.let { warning ->
             item(key = "warning") {
                 SourceWarningBanner(
